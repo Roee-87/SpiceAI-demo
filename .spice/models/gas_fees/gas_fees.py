@@ -4,7 +4,7 @@ import os
 from typing import List
 import numpy as np
 import pandas as pd
-import xgboost
+from forust import GradientBooster
 import tqdm
 from sklearn.metrics import mean_absolute_error
 #from ipfs import Ipfs
