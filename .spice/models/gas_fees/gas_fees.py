@@ -207,7 +207,7 @@ def split_train_test(df, num_test, step=1):
 def xgboost_forecast(train, testx, num_lookahead):
     train = np.asarray(train)
     trainx, trainy = train[:, :-num_lookahead], train[:, -num_lookahead:]
-    model = xgboost.XGBRegressor(objective='reg:squarederror', n_estimators=1000)
+    model = GradientBooster(objective_type ='SquaredLoss', max_leaves = 2**32 -1)
     model.fit(trainx, trainy)
     yhat = model.predict([testx])
     return yhat[0], model
